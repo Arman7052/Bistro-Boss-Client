@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
 import MenuItem from "../../Shared/MenuItem/MenuItem";
+import { Link } from "react-router-dom";
 
 const PopularMenu = () => {
     const [menu , setMenu] = useState([]);
@@ -29,7 +30,7 @@ const PopularMenu = () => {
                 }
             </div>
             <div className=" text-center">
-            <button className="btn uppercase text-yellow-600 btn-link ">View full menu</button>
+            <Link to='/ourmenu' className="btn uppercase text-yellow-600 btn-link ">View full menu</Link>
             </div>
         </section>
     );
