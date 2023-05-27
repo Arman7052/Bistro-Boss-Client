@@ -29,7 +29,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn btn-ghost">Get started</a>
+                   <Link to='/login' className="btn btn-ghost">Log In</Link>
                 </div>
             </div>
         </>
