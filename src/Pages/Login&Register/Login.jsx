@@ -2,7 +2,7 @@ import loginimg from '../../assets/others/authentication2.png'
 import loginBG from '../../assets/others/authentication.png'
 import { useContext, useEffect, useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
-
+import Swal from 'sweetalert2'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { AuthContext } from '../../Provider/AuthProvider';

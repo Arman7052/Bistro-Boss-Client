@@ -1,13 +1,55 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 
 const Navbar = () => {
+    const [showUsername, setShowUsername] = useState(false);
+
+    const handleMouseEnter = () => {
+        setShowUsername(true);
+    };
+
+    const handleMouseLeave = () => {
+        setShowUsername(false);
+    };
+
+    const { user, logOut } = useContext(AuthContext);
+
+
+    const handleLogout = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error))
+    }
+
     const navOptions = <>
         <li><Link to='/'>HOME</Link></li>
         <li><Link to='/contactus'>CONTACT</Link></li>
         <li><Link to='/dashboard'>DASHBOARD</Link></li>
         <li><Link to='/ourmenu'>OUR MENU</Link></li>
         <li><Link to='/order/salad'>OUR SHOP</Link></li>
+        <li>
+            {user && (
+                <Link
+                    to="/"
+                    className="relative inline-block"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    <img
+                        src={user.photoURL}
+                        alt="User Profile"
+                        className="h-8 w-8 rounded-full"
+                    />
+                    {showUsername && (
+                        <span className="absolute bg-transparent text-white text-justify text-xs whitespace-nowrap p-3 ">
+                            {user.displayName}
+                        </span>
+                    )}
+                </Link>
+            )}
+        </li>
     </>
     return (
         <>
@@ -24,12 +66,16 @@ const Navbar = () => {
                     <Link className=" italic font-serif text-sm  lg:text-xl p-2 ms-2">Bistro Boss <br /> Restaurant </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex lg:navbar-end">
-                    <ul className="menu menu-horizontal gap-3">
+                    <ul className="menu menu-horizontal gap-1">
                         {navOptions}
                     </ul>
                 </div>
                 <div className="navbar-end">
-                   <Link to='/login' className="btn btn-ghost">Log In</Link>
+                    {user ?
+                        <Link onClick={handleLogout} to='/' >Logout</Link> :
+                        <Link to='/login' className="btn btn-ghost">Login</Link>
+
+                    }
                 </div>
             </div>
         </>
