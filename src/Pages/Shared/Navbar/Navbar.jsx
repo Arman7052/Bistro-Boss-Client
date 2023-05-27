@@ -7,11 +7,11 @@ const Navbar = () => {
         <li><Link to='/contactus'>CONTACT</Link></li>
         <li><Link to='/dashboard'>DASHBOARD</Link></li>
         <li><Link to='/ourmenu'>OUR MENU</Link></li>
-        <li><Link to='/ourshop'>OUR SHOP</Link></li>
+        <li><Link to='/order/salad'>OUR SHOP</Link></li>
     </>
     return (
         <>
-            <div className="navbar fixed z-10 bg-opacity-60 bg-red-800 text-white max-w-screen-xl mx-auto">
+            <div className="navbar fixed z-10 bg-opacity-60 bg-gray-800 text-white max-w-screen-xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

@@ -14,7 +14,7 @@ const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
    
     useEffect(() => {
-        fetch('https://raw.githubusercontent.com/ProgrammingHero1/bistro-boss-restaurant-resources/main/reviews.json')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
