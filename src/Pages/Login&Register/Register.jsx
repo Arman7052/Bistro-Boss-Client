@@ -48,7 +48,7 @@ const Register = () => {
                 <div className="hero min-h-screen">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
-                            <h1 className="text-5xl font-bold text-center">Sign up now!</h1>
+                            <h1 className="text-5xl font-bold font-serif text-center italic py-10">Sign up now!</h1>
                             <img src={loginimg} alt={loginimg} />
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
@@ -96,7 +96,7 @@ const Register = () => {
                                     <input className="btn bg-[#D1A054] text-white" type="submit" value="Sign Up" />
                                 </div>
                             </form>
-                            <p className=' text-center py-2 font-mono italic'><small>Already have an account <Link to="/login">Login</Link></small></p>
+                            <p className=' text-center py-5 font-semibold font-mono '><small>Already have an account <Link to="/login" className=" underline italic">Login</Link></small></p>
                         </div>
                     </div>
                 </div>

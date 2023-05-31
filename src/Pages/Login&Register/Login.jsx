@@ -59,23 +59,24 @@ const Login = () => {
                 <title> Bistro Boss | Login</title>
 
             </Helmet>
-            <h1 className="text-5xl font-bold text-center pt-10">Login now!</h1>
+            
             <div className="hero min-h-screen shadow-xl">
                 <div className="hero-content flex-col lg:flex-row shadow-2xl">
                     <div className="text-center lg:text-left">
+                    <h1 className="text-5xl font-bold font-serif italic text-center py-10">Login Now!</h1>
                         <img src={loginimg} alt={loginimg} />
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl ">
                     <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text font-serif">Email</span>
                                 </label>
                                 <input type="email" name="email" placeholder="email" className="input input-bordered bg-white" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text font-serif">Password</span>
                                 </label>
                                 <input type="password" name="password" placeholder="password" className="input input-bordered bg-white" />
                                 <label className="label">
@@ -86,14 +87,14 @@ const Login = () => {
                                 <label className="label">
                                     <LoadCanvasTemplate />
                                 </label>
-                                <input onBlur={handleValidateCaptcha} type="text" name="captcha" placeholder="type the captcha above" className="input input-bordered bg-white" />
+                                <input onBlur={handleValidateCaptcha} type="text" name="captcha" placeholder="Type the captcha above" className="input input-bordered font-serif bg-white" />
 
                             </div>
                             <div className="form-control mt-6">
-                                <input disabled={disabled} className="btn bg-[#D1A054] text-white" type="submit" value="Login" />
+                                <input disabled={false} className="btn bg-[#D1A054] text-white" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p className=' text-center py-2 font-mono italic'><small>New Here? <Link to="/signup">Create an account</Link> </small></p>
+                        <p className=' text-center py-5 font-semibold font-mono'><small>New Here? <Link to="/signup" className=" underline  italic">Create an account</Link> </small></p>
                     </div>
                 </div>
             </div>

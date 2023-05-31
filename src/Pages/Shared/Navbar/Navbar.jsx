@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { FaShoppingCart } from 'react-icons/fa';
+import useCart from "../../../hooks/useCart";
 
 
 const Navbar = () => {
@@ -15,6 +17,7 @@ const Navbar = () => {
     };
 
     const { user, logOut } = useContext(AuthContext);
+    const [cart] = useCart();
 
 
     const handleLogout = () => {
@@ -27,8 +30,16 @@ const Navbar = () => {
         <li><Link to='/'>HOME</Link></li>
         <li><Link to='/contactus'>CONTACT</Link></li>
         <li><Link to='/dashboard'>DASHBOARD</Link></li>
-        <li><Link to='/ourmenu'>OUR MENU</Link></li>
-        <li><Link to='/order/salad'>OUR SHOP</Link></li>
+        <li><Link to='/ourmenu'>MENU</Link></li>
+        <li><Link to='/order/salad'>SHOP</Link></li>
+        <li>
+            <Link to='/' className="flex p-1">
+               
+                    <FaShoppingCart></FaShoppingCart>
+                    <sup><div className="badge bg-transparent border-none text-yellow-600 -ml-2 -mt-2">{cart?.length || 0}</div></sup>
+                
+            </Link>
+        </li>
         <li>
             {user && (
                 <Link
@@ -43,7 +54,7 @@ const Navbar = () => {
                         className="h-8 w-8 rounded-full"
                     />
                     {showUsername && (
-                        <span className="absolute bg-transparent text-white text-justify text-xs whitespace-nowrap p-3 ">
+                        <span className="absolute bg-transparent text-yellow-500 text-justify text-xs whitespace-nowrap p-3 ">
                             {user.displayName}
                         </span>
                     )}
@@ -65,14 +76,14 @@ const Navbar = () => {
                     </div>
                     <Link className=" italic font-serif text-sm  lg:text-xl p-2 ms-2">Bistro Boss <br /> Restaurant </Link>
                 </div>
-                <div className="navbar-center hidden lg:flex lg:navbar-end">
-                    <ul className="menu menu-horizontal gap-1">
+                <div className="navbar-center hidden text-yellow-200 lg:flex lg:navbar-end">
+                    <ul className=" flex gap-2">
                         {navOptions}
                     </ul>
                 </div>
                 <div className="navbar-end">
                     {user ?
-                        <Link onClick={handleLogout} to='/' >Logout</Link> :
+                        <Link onClick={handleLogout} to='/' className="btn btn-ghost">Logout</Link> :
                         <Link to='/login' className="btn btn-ghost">Login</Link>
 
                     }
