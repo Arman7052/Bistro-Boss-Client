@@ -33,11 +33,11 @@ const Navbar = () => {
         <li><Link to='/ourmenu'>MENU</Link></li>
         <li><Link to='/order/salad'>SHOP</Link></li>
         <li>
-            <Link to='/' className="flex p-1">
-               
-                    <FaShoppingCart></FaShoppingCart>
-                    <sup><div className="badge bg-transparent border-none text-yellow-600 -ml-2 -mt-2">{cart?.length || 0}</div></sup>
-                
+            <Link to='/dashboard/mycart' className="flex p-1">
+
+                <FaShoppingCart></FaShoppingCart>
+                <sup><div className="badge bg-transparent border-none text-yellow-600 -ml-2 -mt-2">{cart?.length || 0}</div></sup>
+
             </Link>
         </li>
         <li>
