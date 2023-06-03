@@ -7,6 +7,11 @@ import Login from "../Pages/Login&Register/Login";
 import Register from "../Pages/Login&Register/Register";
 import DashBoard from "../LayOut/DashBoard";
 import MyCart from "../Pages/Dashboard/Mycart/MyCart";
+import UserHome from "../Pages/Dashboard/UserHome/UserHome";
+import Reservation from "../Pages/Dashboard/Reservation/Reservation";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
+import AddReview from "../Pages/Dashboard/AddReview/AddReview";
+import MyBooking from "../Pages/Dashboard/MyBooking/MyBooking";
 
 export const router = createBrowserRouter([
   {
@@ -45,6 +50,26 @@ export const router = createBrowserRouter([
       {
         path: 'mycart',
         element: <MyCart></MyCart>
+      },
+      {
+        path: 'userhome',
+        element: <UserHome></UserHome>
+      },
+      {
+        path: 'reservation',
+        element: <Reservation></Reservation>
+      },
+      {
+        path: 'paymentHistory',
+        element: <PaymentHistory></PaymentHistory>
+      },
+      {
+        path: 'addReview',
+        element: <AddReview></AddReview>
+      },
+      {
+        path: 'myBooking',
+        element: <MyBooking></MyBooking>
       }
     ]
   }
